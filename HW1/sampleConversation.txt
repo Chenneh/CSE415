@@ -1,0 +1,80 @@
+# CSE 415 HW_1_PART_B
+# Chen Bai 1560405
+# Jan 14 2019
+
+0A: Donald Mcsale: Hi, I am Donald Mcsale, a McDonald's clerk
+I am programmed by Chen Bai whose NetID is 1560405 and you can contacted him by chenb@uw.edu
+What do you want today?
+
+0B: Peter Porker: Hi, I am a happy fat boy who's hungry every day all the time
+My name is Peter Porker
+Besides sleeping, I am either eating or thinking about what to eat for my next meal
+please ask me questions about food or eat, that's everything I know
+I am programmed by Jie Deng you can contact him at dengj5@uw.edu
+Lets start talking
+
+
+1A: Donald Mcsale: Good morning
+Today we offer cheese burger, big mac, chicken nuggets, french fries, sprite, fanta and coke
+Please make your order slowly and one choice after one.
+
+1B: Peter Porker: do you serve hotpot
+
+2A: Donald Mcsale: Sorry, we don't serve that today.  # RANDOM-CHOICE
+
+2B: Peter Porker: Today is a good day, maybe some cheese burger
+
+3A: Donald Mcsale: How many cheese burger do you want?  # CYCLE FEATURE: SET_1_STEP_1
+
+3B: Peter Porker: I'm feeling starving right now, please get me 7
+
+4A: Donald Mcsale: No problem, then what?   # CYCLE FEATURE: SET_2_STEP_1
+
+4B: Peter Porker: i'd like donuts
+
+5A: Donald Mcsale: I'm sorry, we don't have that. # RANDOM-CHOICE
+
+5B: Peter Porker: Let me think about it, do you have big mac
+
+6A: Donald Mcsale: How many big mac is good for you?  # CYCLE FEATURE: SET_1_STEP_2
+
+6B: Peter Porker: I'm super hungry, how about 5
+
+7A: Donald Mcsale: Nice Choice, what's next   # CYCLE FEATURE: SET_2_STEP_2
+
+7B: Peter Porker: may I get beef
+
+8A: Donald Mcsale: Sorry, but that was sold out. # RANDOM-CHOICE
+
+8B: Peter Porker: Today is a good day, maybe some coke
+
+9A: Donald Mcsale: How many coke do you wish to have?  # CYCLE FEATURE: SET_1_STEP_3
+
+9B: Peter Porker: I haven't eat for an hour! So, I'm gonna have 6
+
+10A: Donald Mcsale: Anything else?   # CYCLE FEATURE: SET_2_STEP_3
+
+10B: Peter Porker: and some sprite
+
+11A: Donald Mcsale: How many sprite would you like?  # CYCLE FEATURE: SET_1_STEP_4
+
+11B: Peter Porker: my stomach is rambling, can I get 7
+
+12A: Donald Mcsale: Ok, got you. Is that all?   # CYCLE FEATURE: SET_2_STEP_4
+
+12B: Peter Porker: That's all
+
+13A: Donald Mcsale: Are you sure that's all for today? Yes(y)/No(n)
+
+13B: Peter Porker: yes
+
+14A: Donald Mcsale: You ordered 7 cheese burger 5 big mac 6 coke 7 sprite. Is that correct? Yes(y)/No(n)  # MEMORY FEATURE: MEMORIZED ORDER MADE BY ANOTHER AGENT
+
+14B: Peter Porker: Yes. Thank you very much.by the way, I suggest you add hotpot to your menu, I really love it
+
+15A: Donald Mcsale: Thanks for your order and suggestion. Your total is $209 Please wait for your meal there.
+
+15B: Peter Porker: Thanks
+
+
+Process finished with exit code 0

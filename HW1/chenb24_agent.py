@@ -1,5 +1,10 @@
+# CSE 415 HW_1_PART_B
+# Chen Bai 1560405
+# Jan 14 2019
+
 from re import *  # Loads the regular expression module.
 import random
+
 
 def main():
     while True:
@@ -26,10 +31,12 @@ menu_real = ["cheese burger", "big mac", "chicken nuggets", "french fries", "cok
 price = {"cheese burger": 10, "big mac": 20, "chicken nuggets": 10, "french fries": 5,
          "coke": 3, "sprite": 3, "fanta": 3}
 end = ["that", "s", "all"]
-confirm = ["Ok, got you. Is that all?", "Nice Choice, what's next", "Anything else?"]
-uncertain = ["Sorry, we don't serve that today.", "Sorry, we don't have that.", "Sorry, this is sold out."]
+confirm = ["No problem, then what?", "Nice Choice, what's next", "Anything else?", "Ok, got you. Is that all?"]
+uncertain = ["Sorry, we don't serve that today.", "I'm sorry, we don't have that.", "Sorry, but that was sold out."]
 leave = {"bye": "bye bye", "goodbye": "see you", "have a nice day": "you too", "thanks": "you're welcome"}
-sorry = ["No problem", "That's fine", "Never mind"]
+re_sorry = ["No problem", "That's fine", "Never mind"]
+amount_question = [" do you want?", " is good for you?", " do you wish to have?", " would you like?"]
+thanks = ["I appreciate that!", "Thank you very much!", "You're so nice"]
 
 # global variable
 order = {"cheese burger": 0, "big mac": 0, "chicken nuggets": 0, "french fries": 0, "coke": 0, "sprite": 0, "fanta": 0}
@@ -41,6 +48,8 @@ uncert = 0
 last_food = ""
 greeted = 0
 order_repeat = 0
+greet_stop = 0
+am = 0
 
 
 def respond(the_input):
@@ -53,10 +62,12 @@ def respond(the_input):
     global uncert
     global last_food
     global greeted
-    global  order_repeat
-    # 1. when user want to end the dialog
-    if wordlist[0] in leave:
-        return
+    global order_repeat
+    global greet_stop
+    global am
+
+    if wordlist[0] in leave:  # 1. when user want to end the dialog
+        return "Bye"
 
     greet_reply = ""
     if_greet = 0
@@ -72,10 +83,11 @@ def respond(the_input):
     greet_reply += ('Today we offer cheese burger, big mac, chicken nuggets, french fries, sprite, fanta and coke \n'
                     'Please make your order slowly and one choice after one.')
 
-    if if_greet == 1:
+    if if_greet == 1 and greet_stop == 0:
         if greeted == 1:        # 2. first time greeting
             return greet_reply
         elif greeted == 2:      # 3. repeat greeting
+            greet_stop = 1
             return "Greeting again, what should I do for you now?"
 
     if wordlist[0] == '':  # 4. empty input from user
@@ -96,9 +108,10 @@ def respond(the_input):
             n_step = 1
             return "You ordered " + stringify(make_final_order()) + ". Is that correct? Yes(y)/No(n)"
         else:  # confirm end order - Doing memory
-            return "Thanks for your order. Your total is $" + str(total) + " Please wait for your meal there."
+            return "Thanks for your order and suggestion. Your total is $" + str(total) + \
+                   " Please wait for your meal there."
 
-    if wordlist[0] == "n" or wordlist[0] == "no":  # 8. when user denies certain question
+    if wordlist[0] == "n" or wordlist[0] == "no":  # 8. response when user denies certain question
         if n_step == 0:
             return "Do you want more or reorder?"
         elif n_step == 1:
@@ -107,7 +120,7 @@ def respond(the_input):
             clear_order()
             return "Well, please order again!"
 
-    if ("reorder" or "again") in wordlist:  # 9. when user want to reorder
+    if ("reorder" or "again") in wordlist:  # 9. response when user want to reorder
         clear_order()
         more_less = 0
         return "Ok, the order is now clear, you can now do reorder"
@@ -123,27 +136,42 @@ def respond(the_input):
             last_food = food
             count += 1
             if count >= 2:
-                last_food = ""
-                return "Please, I am new here, so, tell me your choice one by one."  # 11. when user tells more than one
+                last_food = ""   # 11. response when user tells more than one food at once
+                return "Please, I am new here, so, tell me your choice one by one."
 
-    for word in wordlist:   # 12. adding food to order - Doing cycle
+    for word in wordlist:   # 12. response to adding food to order - Doing cycle
         if any(char.isdigit() for char in word):
             num = int(word)
             order[last_food] += num
             last_food = ""
-            if conf == 3:
+            if conf == 4:
                 conf = 0
             reply = confirm[conf]
             conf += 1
             return reply
 
-    if last_food != "":  # 13. asking for amount
-        return "How much " + last_food + " do you want?"
+    if last_food != "":  # 13. asking for amount - Doing cycle
+        if am >= 4:
+            am = 0
+            return "How many " + last_food + amount_question[am]
+        else:
+            reply = "How many " + last_food + amount_question[am]
+            am += 1
+            return reply
+
+    if ("can" and "help") in wordlist:  # 14. response to help - Doing random
+        return thanks[random.randint(0, 2)]
 
     if "sorry" in wordlist:
-        return sorry[random.randint(0, 2)]  # 14. response to apologize - Doing random
+        return re_sorry[random.randint(0, 2)]  # 15. response to apologize - Doing random
 
-    return uncertain[random.randint(0, 2)]  # 15. default response - Doing random
+    if uncert >= 3:  # 16. default response - Doing cycle
+        uncert = 0
+        return uncertain[uncert]
+    else:
+        reply = uncertain[uncert]
+        uncert += 1
+        return reply
 
 
 def prepare_wordlist(wordlist):
@@ -201,6 +229,6 @@ def update_greeted(greet_num):
         greet_num = 2
     return greet_num
 
-main() # Launch the program.
+# main() # Launch the program.
 
 

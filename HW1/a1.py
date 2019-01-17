@@ -1,3 +1,7 @@
+# CSE 415 HW_1_PART_A
+# Chen Bai 1560405
+# Jan 14 2019
+
 import math
 
 
@@ -17,8 +21,6 @@ def pair_off(l):
     return list_re
 
 
-# mystery_code("abc Iz th1s Secure? n0, no, 9!") -> "TUV bS MA1L lXVNKX? G0, GH, 9!"
-# not support item assignment
 def mystery_code(s):
     s_re = ""
     for c in s:
@@ -36,30 +38,6 @@ def mystery_code(s):
     return s_re
 
 
-'''
-def mystery_code(s):
-    count = 0
-    for c in s:
-        num = ord(c)
-        c_new = c
-        if 97 <= num <= 103:
-            c_new = chr(num - 13)
-        elif 104 <= num <= 122:
-            print(c)
-            c_new = chr(num - 39)
-            print(c_new)
-        elif 65 <= num <= 71:
-            c_new = chr(num + 39)
-        elif 72 <= num <= 90:
-            c_new = chr(num + 25)
-        s = s[count:].replace(c, c_new)
-        count += 1
-    return s
-'''
-
-
-# if care case?
-# ['programmed', 'debugged', 'executed', 'crashed', 'repeated', 'ate']
 def past_tense(l):
     list_re = []
     special_map = {"have": "had", "be": "was", "am": "was", "is": "was", "are": "were", "eat": "ate", "go": "went"}

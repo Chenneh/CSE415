@@ -2,10 +2,10 @@
 # This program runs a dialog between two agents, which must be defined
 # elsewhere as separate modules.
 
-import dengj5_agent as agentA
-import chenb24_agent as agentB
+import chenb24_agent as agentA
+import dengj5_agent as agentB
 
-N_TURNS = 50
+N_TURNS = 15
 
 turn = 0
 print(str(turn)+"A: " + agentA.agentName() + ': ' + agentA.introduce() + "\n")

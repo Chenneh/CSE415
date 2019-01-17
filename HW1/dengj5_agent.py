@@ -11,13 +11,12 @@ def main():
 
 def introduce():
     result = ''
-    result += "Hi, I am a happy fat nerd who's hungry every day \n"
+    result += "Hi, I am a happy fat boy who's hungry every day all the time \n"
     result += "My name is Peter Porker \n"
-    result += "Besides study, I am either eating or thinking about what to eat for my next meal \n"
+    result += "Besides sleeping, I am either eating or thinking about what to eat for my next meal \n"
     result += "please ask me questions about food or eat, that's everything I know \n"
-    result += "I am programmed by Jie Deng you can contact him by dengj5@uw.edu \n"
+    result += "I am programmed by Jie Deng you can contact him at dengj5@uw.edu \n"
     result += "Lets start talking \n"
-    result += "you can ask me questions about food or study \n"
     return result
 
 
@@ -32,8 +31,10 @@ general_greet = ['Hi', 'hi', 'Hello', 'hello']
 general_greet_reply = ['Hi~~~~~~~', 'Hiiiiiiiiiii', 'Hello~~~~~~~~~', 'Helloooooooooo', 'Nice to meet you!!!!!!']
 
 # question 2
-favourite_food = ['hotpot', 'cheese burger', 'French fries', 'basil chicken', 'big mac', 'chicken nuggets']
-favourite_drink = ['sprite', 'doctor pepper', 'beer', 'Fanta', 'coke', 'milkshake']
+favourite_food = ['hotpot', 'cheese burger', 'French fries', 'basil chicken', 'big mac', 'chicken nuggets', 'donuts',
+                  'beef', 'sausage']
+favourite_drink = ['sprite', 'Fanta', 'coke']
+cyc_drink_list = ['wine', 'whiskey', 'cocktail', 'apple juice']
 hate_food = ['']
 
 foodquestion_1 = ['food', 'like']
@@ -45,32 +46,32 @@ drinkquestion_2 = ['drink', 'favourite']
 drinkquestion_3 = ['like', 'drink']
 
 order_count = 0
-
 food_quantity = [5, 6, 7, 8, 9]
-
-
-# partner(MCDonald's clerk)
-time_p = ["morning", "afternoon", "evening"]
-intro = [["I", "am"], ["hi", "I", "am"], ["my", "name", "is"], ["hi", "my", "name", "is"]]
-hello = ["hello", "hi"]
-menu = ["cheese", "burger", "big", "mac", "chicken", "nugget", "french", "fries", "coke"]
-menu_real = ["cheese burger", "big mac", "chicken nugget", "french fries", "coke"]
-end = ["that", "s", "all"]
-confirm = ["Ok, got you", "Nice Choice", "Anything else?"]
-uncertain = ["Sorry, I'm not sure, what do you mean.", "Pardon", "Would you make mind rephrase it?"]
-leave = {"bye": "bye bye", "goodbye": "see you", "have a nice day": "you too"}
-order = {"cheese burger": 0, "big mac": 0, "chicken nugget": 0, "french fries": 0, "coke": 0}
-y_step = 0  # 0: nothing
-n_step = 0
-more_less = 0  # 0:more, 1: less # 2: not change
-conf = 0
-uncert = 0
-price = {"cheese burger": 10, "big mac": 20, "chicken nugget" : 10, "french fries" : 5, "coke": 3}
 
 greet = 0
 user_major = ''
 user_favourite_food = ''
 user_favourite_drink = ''
+drink_cyc_count = 0
+
+order_pattern_count = 0
+
+wrong_input_response = ['sorry I can not understand', 'can you rephrase it', 'that is beyond my intelligence']
+wrong_input_count = 0
+
+quantity_response = ['I\'m feeling starving right now, please get me ', 'I\'m super hungry, how about ',
+                     'I haven\'t eat for an hour! So, I\'m gonna have ', 'my stomach is rambling, can I get ']
+quantity_pattern = 0
+order_food_pattern = 0
+order_response_pattern = ['Today is a good day, maybe some ', 'Let me think about it, do you have ']
+
+
+last_order = ''
+not_on_list = []
+
+ordered = []
+order_questioning = ['i\'d like ', 'may I get ', 'and some ', 'i want ']
+order_questioning_count = 0
 
 
 def respond(the_input):
@@ -82,6 +83,13 @@ def respond(the_input):
     global user_major
     global user_favourite_drink
     global user_favourite_food
+    global drink_cyc_count
+    global wrong_input_count
+    global quantity_pattern
+    global order_food_pattern
+    global last_order
+    global not_on_list
+    global order_questioning_count
 
     # 1 no input
     if wordlist[0] == '':  # empty input from user
@@ -100,7 +108,8 @@ def respond(the_input):
         return str(random_greeting)
 
     # 3 favourite food
-    if set(foodquestion_1) <= set(wordlist) or set(foodquestion_2) <= set(wordlist) or set(foodquestion_3) <= set(wordlist):
+    if set(foodquestion_1) <= set(wordlist) or set(foodquestion_2) <= set(wordlist) or \
+            set(foodquestion_3) <= set(wordlist):
         reply = ''
         favourite_foods = []
         for i in range(0, 3):
@@ -115,10 +124,19 @@ def respond(the_input):
         return 'Nice! I like ' + user_favourite_food + ' as well'
 
     # 4 favourite drink
-    if set(drinkquestion_1) <= set(wordlist) or set(drinkquestion_2) <= set(wordlist) or set(drinkquestion_3) <= set(wordlist):
+    if set(drinkquestion_1) <= set(wordlist) or set(drinkquestion_2) <= set(wordlist) or \
+            set(drinkquestion_3) <= set(wordlist):
         reply = ''
         reply += 'I drink iced coke everyday' + '\n'
         reply += 'and when I am down I drink beer' + '\n'
+
+        # cyclic response 2
+        # cyclic chosen a third favourite drink if asked repeatedly
+        if drink_cyc_count == 4:
+            drink_cyc_count = 0
+        reply += 'sometimes I drink ' + cyc_drink_list[drink_cyc_count] + '\n'
+        drink_cyc_count += 1
+
         print(reply)
         print('what do you drink most?')
         user_favourite_drink = input()
@@ -150,10 +168,8 @@ def respond(the_input):
         user_major = str(major_input)
         return 'oh, that\'s a nice one, I like that'
 
-    # what are your favourite books?
-    # what are you interested in?
-
-    # 8 end
+    # end
+    # "memory" feature
     if 'bye' in wordlist or (('see' in wordlist) and ('you' in wordlist)):
         reply = 'see u' + '\n'
         if user_major != '':
@@ -172,53 +188,104 @@ def respond(the_input):
     # 1 order first food
     if ('order' and 'make') in wordlist:
         order_count += 1
-        reply = 'can I get ' + random.choice(favourite_food)        # order first food
+        random_food = random.choice(favourite_food)
+        while random_food in ordered:
+            random_food = random.choice(favourite_food)
+
+        ordered.append(random_food)
+        last_order = random_food
+        reply = 'do you serve ' + random_food        # order first food
         return reply
 
     # 2 food quantity
-    if wordlist[0:2] == ['how', 'much']:
-        return str(random.choice(food_quantity))                    # oder one food for a random amount
+    if wordlist[0:2] == ['how', 'many']:
+        if quantity_pattern >= 4:
+            quantity_pattern = 0
+            re_part1 = quantity_response[quantity_pattern]
+        else:
+            re_part1 = quantity_response[quantity_pattern]
+            quantity_pattern += 1
+        return re_part1 + str(random.choice(food_quantity))  # order random amount
 
     # 3 continue order
     continue_order = ['is', 'that', 'all']
-    if ('else' in wordlist) or ('next' in wordlist) or (set(continue_order) <= set(wordlist)):
+    confirm = ['no', 'problem']
+    if ('else' in wordlist) or ('next' in wordlist) or (set(continue_order) <= set(wordlist)) or \
+            (set(confirm) <= set(wordlist)):
         reply = ''
-        if order_count == 5:
-            reply += 'That\'s all'
-        elif order_count == 4:
-            reply += 'can I get ' + random.choice(favourite_drink)  # order one drink
+        if order_questioning_count >= 3:
+            order_questioning_count = 0
+            order_start = order_questioning[order_questioning_count]
         else:
-            reply += 'can I get ' + random.choice(favourite_food)   # order four food
+            order_start = order_questioning[order_questioning_count]
+            order_questioning_count += 1
+        if order_count == 4:
+            reply += 'That\'s all'
+        elif order_count == 3:
+            random_drink = random.choice(favourite_drink)
+            ordered.append(random_drink)
+            reply += order_start + random_drink  # order one drink
+        else:
+            random_food = random.choice(favourite_food)
+            while random_food in ordered:
+                random_food = random.choice(favourite_food)
+            ordered.append(random_food)
+            last_order = random_food
+            reply += order_start + random.choice(favourite_food)   # order four food
         order_count += 1
 
         return reply
 
     # 4 if order not in menu
     if 'sorry' in wordlist:
+        ordered.append(last_order)
+        not_on_list.append(last_order)
         order_count = max(0, order_count - 1)  # food not in menu, order failed
         reply = ''
-        if order_count == 5:
+        order_response = order_response_pattern[order_food_pattern]
+        order_food_pattern = 1 - order_food_pattern
+
+        if order_count == 3:
             reply += 'That\'s all, plz make my order fast, I am super hungry right now'
-        elif order_count == 4:
-            reply += 'ok then, can I get ' + random.choice(favourite_drink)
+        elif order_count == 2:
+            random_drink = random.choice(favourite_drink)
+            while random_drink in ordered:
+                random_drink = random.choice(favourite_drink)
+            ordered.append(random_drink)
+            last_order = random_drink
+            reply += order_response + random.choice(favourite_drink)
         else:
-            reply += 'ok then, can I get ' + random.choice(favourite_food)
+            random_food = random.choice(favourite_food)
+            while random_food in ordered:
+                random_food = random.choice(favourite_food)
+            last_order = random_food
+            ordered.append(random_food)
+            reply += order_response + random_food
         order_count += 1
         return reply
 
     # 5 total price verify
     if 'ordered' in wordlist and 'correct' in wordlist:
-        reply = 'Yes. Thank you very much'           # confirm order
+        reply = 'Yes. Thank you very much.'
+        if len(not_on_list) != 0:
+            random_suggestion = random.choice(not_on_list)
+            reply += 'by the way, I suggest you add ' + random_suggestion + ' to your menu, I really love it'
         return reply
-
-    if 'total' in wordlist:
-        return "Thanks"
 
     # 6 final order confirmation
     if 'sure' in wordlist:
         return 'yes'
 
-    return 'please say something else, I can not really understand you'  # invalid input
+    # 7 confirmed
+    if 'total' in wordlist:
+        return 'Thanks'
+
+    # cyclic response 2
+    if wrong_input_count == 3:
+        wrong_input_count = 0
+    reply = wrong_input_response[wrong_input_count]
+    wrong_input_count += 1
+    return reply + ', please say something else'  # invalid input
 
 
 def remove_punctuation(text):
@@ -231,8 +298,7 @@ def stringify(wordlist):
 
 punctuation_pattern = compile(r"\,|\.|\?|\!|\;|\:")
 
-
-introduce()
+# introduce()
 # main() # Launch the program.
 
 

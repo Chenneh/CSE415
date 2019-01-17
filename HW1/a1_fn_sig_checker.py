@@ -65,4 +65,3 @@ that they are named correctly, take the right numbers and types of
 arguments, and they return the right type of values.
 -----------------------------------------------------------------------
 """)
-

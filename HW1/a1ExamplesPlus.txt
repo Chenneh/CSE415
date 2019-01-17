@@ -1,3 +1,7 @@
+# CSE 415 HW_1_PART_A
+# Chen Bai 1560405
+# Jan 14 2019
+
 PART A:
 # QUESTION 1:
 (1):  result_1 = a1.five_x_cubed_plus_1(2)  # example call, input: 2
@@ -14,23 +18,23 @@ PART A:
       print(result_2)  # result: [[2, 5], [1.5, 100], [3, 8], [7, 1], [1, 0], [-2]]
                        # answer: [[2, 5], [1.5, 100], [3, 8], [7, 1], [1, 0], [-2]]
 
-(2):  result_2 = a1.pair_off([1, 2, 3, 4, 5, 'a', 'b', ['x', 'y'], ['z'], 'second from last', 'last'])  # example call, input: [1, 2, 3, 4, 5, 'a', 'b', ['x', 'y'], ['z'], 'second from last', 'last']
-      print(result_2)  # result: [[1, 2], [3, 4], [5, 'a'], ['b', ['x', 'y']], [['z'], 'second from last'], ['last']]
-                       # answer: [[2, 5], [1.5, 100], [3, 8], [7, 1], [1, 0], [-2]]
+(2):  result_2 = a1.pair_off(['a', 'a', 'b', 'b', 'c'])  # example call, input: ['a', 'a', 'b', 'b', 'c']
+      print(result_2)  # result: [['a', 'a'], ['b', 'b'], ['c']]
+                       # answer: [['a', 'a'], ['b', 'b'], ['c']]
 
-(3): result_2 =  a1.pair_off([1, 2, 3, 4, 5, 'a', 'b', ['x', 'y'], ['z'], 'second from last', 'last'])  # example call, input: ["my", "student", "ID", "is", [1560, 405], "and", ["it", "is"], "very important", "for me"]
-    print(result_2)    # result: [['my', 'student'], ['ID', 'is'], [[1560, 405], 'and'], [['it', 'is'], 'very important'], ['for me']]
+(3):  result_2 =  a1.pair_off(["my", "student", "ID", "is", [1560, 405], "and", ["it", "is"], "very important", "for me"])  # example call, input: ["my", "student", "ID", "is", [1560, 405], "and", ["it", "is"], "very important", "for me"]
+      print(result_2)  # result: [['my', 'student'], ['ID', 'is'], [[1560, 405], 'and'], [['it', 'is'], 'very important'], ['for me']]
                        # answer: [['my', 'student'], ['ID', 'is'], [[1560, 405], 'and'], [['it', 'is'], 'very important'], ['for me']]
 # QUESTION 3:
 (1):  result3 = a1.mystery_code("abc Iz th1s Secure? n0, no, 9!")  # example call, input: "abc Iz th1s Secure? n0, no, 9!"
       print(result_3)  # result: TUV bS MA1L lXVNKX? G0, GH, 9!
                        # answer: TUV bS MA1L lXVNKX? G0, GH, 9!
 
-(2):  result3 = a1.mystery_code("abcde")  # example call, input: "abcde"
-      print(result_3)  # result: TUVWX
-                       # answer: TUVWX
+(2):  result3 = a1.mystery_code("1560405==1560405")  # example call, input: "1560405==1560405"
+      print(result_3)  # result: 1560405==1560405
+                       # answer: 1560405==1560405
 
-(3):  result3 = a1.mystery_code("result_3 = mystery_code("hijklmnopqrstuvwxyzabcdefg!@#$%^&*()_+=HIJKLMNOPQRSTUVWXYZABCDEFG")")  # example call, input: "result_3 = mystery_code("hijklmnopqrstuvwxyzabcdefg!@#$%^&*()_+=HIJKLMNOPQRSTUVWXYZABCDEFG")"
+(3):  result3 = a1.mystery_code("hijklmnopqrstuvwxyzabcdefg!@#$%^&*()_+=HIJKLMNOPQRSTUVWXYZABCDEFG")  # example call, input: "hijklmnopqrstuvwxyzabcdefg!@#$%^&*()_+=HIJKLMNOPQRSTUVWXYZABCDEFG"
       print(result_3)  # result: ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=abcdefghijklmnopqrstuvwxyz
                        # answer: ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=abcdefghijklmnopqrstuvwxyz
 # QUESTION 4:
@@ -42,6 +46,6 @@ PART A:
       print(result_4)  # result: ['studied', 'ate', 'played']
                        # answer: ['studied', 'ate', 'played']
 
-(3): result_4 = a1.past_tense(['follow', 'kill', 'chop', 'pack', 'discard', 'escape', 'succeed', 'laugh'])  # example call, input: ['follow', 'kill', 'chop', 'pack', 'discard', 'escape', 'succeed', 'laugh']
-     print(result_4)  # result: ['followed', 'killed', 'chopped', 'packed', 'discarded', 'escaped', 'succeeded', 'laughed']
-                      # answer: ['followed', 'killed', 'chopped', 'packed', 'discarded', 'escaped', 'succeeded', 'laughed']
+(3):  result_4 = a1.past_tense(['follow', 'kill', 'chop', 'pack', 'discard', 'escape', 'succeed', 'laugh'])  # example call, input: ['follow', 'kill', 'chop', 'pack', 'discard', 'escape', 'succeed', 'laugh']
+      print(result_4)  # result: ['followed', 'killed', 'chopped', 'packed', 'discarded', 'escaped', 'succeeded', 'laughed']
+                       # answer: ['followed', 'killed', 'chopped', 'packed', 'discarded', 'escaped', 'succeeded', 'laughed']
