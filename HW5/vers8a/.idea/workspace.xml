@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f39e600-b5fd-4615-8ae6-db3cb7958dbb" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chenb24_VI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="898">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="e#258#298#0" />
+                <element signature="e#382#699#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TOH_MDP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3669">
+              <caret line="434" column="59" selection-start-line="434" selection-start-column="27" selection-end-line="434" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#1177#1" />
+                <element signature="e#1178#1188#0" expanded="true" />
+                <element signature="e#4532#6918#0" />
+                <element signature="e#6942#7511#0" />
+                <element signature="e#7547#7791#0" />
+                <element signature="e#7827#8071#0" />
+                <element signature="e#8162#8324#0" />
+                <element signature="e#8377#9924#0" />
+                <element signature="e#9953#10370#0" />
+                <element signature="e#10415#10983#0" />
+                <element signature="e#19604#20839#0" />
+                <element signature="e#20909#22681#0" />
+                <element signature="e#22690#23127#0" />
+                <element signature="e#23229#25027#0" />
+                <element signature="e#25054#26711#0" />
+                <element signature="e#26946#27196#0" />
+                <element signature="e#27243#27730#0" />
+                <element signature="e#27930#29283#0" />
+                <element signature="e#29329#29593#0" />
+                <element signature="e#29625#30099#0" />
+                <element signature="e#35554#35593#0" />
+                <element signature="e#35623#35664#0" />
+                <element signature="e#35694#35735#0" />
+                <element signature="e#35755#36261#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vis_TOH_MDP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3943" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>when drawing policy</find>
+      <find>ACTIONS</find>
+      <find>MDP_command</find>
+      <find>one_step_of_VI</find>
+      <find>LAST_REWARD</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/TOH_MDP.py" />
+        <option value="$PROJECT_DIR$/chenb24_Q_Learn.py" />
+        <option value="$PROJECT_DIR$/chenb24_VI.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="vers8a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vers8a" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="chenb24_VI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vers8a" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chenb24_VI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.chenb24_VI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f39e600-b5fd-4615-8ae6-db3cb7958dbb" name="Default Changelist" comment="" />
+      <created>1550964213282</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550964213282</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.34246576" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TowersOfHanoi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script_for_TOH_MDP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#634#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vis_TOH_MDP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3943" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chenb24_Q_Learn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="190" column="22" lean-forward="true" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+          <folding>
+            <element signature="e#833#1638#0" />
+            <element signature="e#1712#1952#0" />
+            <element signature="e#2092#2414#0" />
+            <element signature="e#2484#2720#0" />
+            <element signature="e#5333#5730#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TOH_MDP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3669">
+          <caret line="434" column="59" selection-start-line="434" selection-start-column="27" selection-end-line="434" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#1177#1" />
+            <element signature="e#1178#1188#0" expanded="true" />
+            <element signature="e#4532#6918#0" />
+            <element signature="e#6942#7511#0" />
+            <element signature="e#7547#7791#0" />
+            <element signature="e#7827#8071#0" />
+            <element signature="e#8162#8324#0" />
+            <element signature="e#8377#9924#0" />
+            <element signature="e#9953#10370#0" />
+            <element signature="e#10415#10983#0" />
+            <element signature="e#19604#20839#0" />
+            <element signature="e#20909#22681#0" />
+            <element signature="e#22690#23127#0" />
+            <element signature="e#23229#25027#0" />
+            <element signature="e#25054#26711#0" />
+            <element signature="e#26946#27196#0" />
+            <element signature="e#27243#27730#0" />
+            <element signature="e#27930#29283#0" />
+            <element signature="e#29329#29593#0" />
+            <element signature="e#29625#30099#0" />
+            <element signature="e#35554#35593#0" />
+            <element signature="e#35623#35664#0" />
+            <element signature="e#35694#35735#0" />
+            <element signature="e#35755#36261#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chenb24_VI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="898">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#258#298#0" />
+            <element signature="e#382#699#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
